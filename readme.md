@@ -6,6 +6,12 @@ This file defines the classes and configuration needed to process documents:
 - **`DocumentProcessorConfig`**: A Pydantic-based class that holds configuration settings, such as the input directory path and whether to read files recursively.
 - **`DocumentProcessor`**: The main class responsible for loading and optionally combining documents. It uses the `LlamaParse` and `SimpleDirectoryReader` classes for reading documents from a directory.
 
+- **`one_doc_per_page`**: When this option is set to `True`, the `DocumentProcessor` will combine all pages from the same file into a single document. This is useful when you want to treat an entire document (e.g., a PDF with multiple pages) as a single entity.
+
+  **Example**:
+  - **Use Case**: You have a PDF file with 10 pages, and you want to process it as one document.
+  - **Result**: The `DocumentProcessor` will return a single `Document` object containing all 10 pages combined into one.
+
 ### 2. `main.py`
 
 This is the entry point of the application. It initializes the `DocumentProcessor` with the desired configuration and processes the documents:
