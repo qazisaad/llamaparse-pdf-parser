@@ -1,0 +1,11 @@
+# Ignore .env file
+.env
+
+# Ignore everything under the data/ folder
+data/*
+
+# Ignore everything in and under the myenv/ folder
+myenv/
+
+# Ignore everything in and under the __pycache__/ folder
+__pycache__/
