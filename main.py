@@ -10,6 +10,8 @@ nest_asyncio.apply()
 async def main() -> None:
     # Use Pydantic configuration
     config = DocumentProcessorConfig(input_dir="./data")
+    # Set one_doc_per_page to True to combine pages from the same file into a single document
+    # Set one_doc_per_page to False or do not specify it to keep each page as a separate document
     one_doc_per_page = True
     processor = DocumentProcessor(config=config, one_doc_per_page=one_doc_per_page)
 
